@@ -45,4 +45,43 @@ function frameEndPool(){
 }
 
 
-export {size, frameEnd, frameEndPool}
+
+function init(id){
+	console.log(id);
+	TweenLite.defaultEase = Power3.easeOut
+	const tl = new TimelineMax()
+	tl.set(".frame1", {opacity:1})
+	const {w, h} = size
+	switch(id){
+		case "300x180":
+		tl.set(".ill", {transformOrigin:`${w*.75}px ${h}px`, x:0, y:0 })
+		tl.set(".phone", {y:"+=180"})	
+		break;
+
+		case "320x180":
+		tl.set(".ill", {transformOrigin:`${w/2}px ${h}px`})
+		tl.set(".phone", {y:200})	
+		break;
+
+		case "300x600":
+		tl.set(".ill", {transformOrigin:`${w/2}px ${h/2}px`, x:0, y:0 })
+		tl.set(".phone", {y:"+=100", opacity:0})
+		break;
+
+		case "320x50":
+		tl.set(".ill", {transformOrigin:`${w/2}px ${h*2}px`, x:-w/4, y:-h })
+		break;
+
+		case "728x90":
+		tl.set(".ill", {transformOrigin:`${w*.75}px ${h}px`, x:0, y:0 })
+		tl.set(".phone", {y:"+=200"})	
+		break;
+
+		default:
+		tl.set(".ill", {transformOrigin:`${w/2}px ${h}px`})
+		break;
+	}
+	return tl
+}
+
+export {size, frameEnd, frameEndPool, init}

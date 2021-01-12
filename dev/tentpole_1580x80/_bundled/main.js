@@ -47,9 +47,50 @@ function frameEndPool() {
 	return tl;
 }
 
+function init(id) {
+	console.log(id);
+	TweenLite.defaultEase = Power3.easeOut;
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+	var w = size.w;
+	var h = size.h;
+
+	switch (id) {
+		case "300x180":
+			tl.set(".ill", { transformOrigin: w * .75 + "px " + h + "px", x: 0, y: 0 });
+			tl.set(".phone", { y: "+=180" });
+			break;
+
+		case "320x180":
+			tl.set(".ill", { transformOrigin: w / 2 + "px " + h + "px" });
+			tl.set(".phone", { y: 200 });
+			break;
+
+		case "300x600":
+			tl.set(".ill", { transformOrigin: w / 2 + "px " + h / 2 + "px", x: 0, y: 0 });
+			tl.set(".phone", { y: "+=100", opacity: 0 });
+			break;
+
+		case "320x50":
+			tl.set(".ill", { transformOrigin: w / 2 + "px " + h * 2 + "px", x: -w / 4, y: -h });
+			break;
+
+		case "728x90":
+			tl.set(".ill", { transformOrigin: w * .75 + "px " + h + "px", x: 0, y: 0 });
+			tl.set(".phone", { y: "+=200" });
+			break;
+
+		default:
+			tl.set(".ill", { transformOrigin: w / 2 + "px " + h + "px" });
+			break;
+	}
+	return tl;
+}
+
 exports.size = size;
 exports.frameEnd = frameEnd;
 exports.frameEndPool = frameEndPool;
+exports.init = init;
 
 },{}],2:[function(require,module,exports){
 "use strict";

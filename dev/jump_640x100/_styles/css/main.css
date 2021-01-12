@@ -229,9 +229,9 @@ sup {
 }
 
 #legalBtn {
-  -webkit-transform: translate(7px, 133px);
-  -ms-transform: translate(7px, 133px);
-  transform: translate(7px, 133px);
+  -webkit-transform: translate(7px, 54px);
+  -ms-transform: translate(7px, 54px);
+  transform: translate(7px, 54px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

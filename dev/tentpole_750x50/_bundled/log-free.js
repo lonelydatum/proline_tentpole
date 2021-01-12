@@ -9,7 +9,7 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power2.easeInOut;
 
-function frameEnd() {
+function frameEnd(nudge) {
 	var tl = new TimelineMax();
 
 	tl.set(".frame2", { opacity: 1 });
@@ -21,7 +21,11 @@ function frameEnd() {
 	tl.from(".t2", .01, { opacity: 0 }, "+=.3");
 	tl.from(".cta1", .01, { opacity: 0 }, "+=1.5");
 	tl.to(".cta1", .01, { opacity: 0 }, "+=2.5");
-	tl.from(".cta2", .2, { opacity: 0 }, "+=.2");
+	if (nudge) {
+		tl.add(nudge);
+	} else {
+		tl.from(".cta2", .2, { opacity: 0 }, "+=.2");
+	}
 
 	return tl;
 }
@@ -98,7 +102,11 @@ function start() {
 	(0, _commonJsStrikerJs.player)(1);
 	tl.from(".t1a", .15, { x: "-=600", opacity: 1 }, .2);
 
-	tl.add((0, _commonJsCommonJs.frameEnd)(), "+=1.5");
+	var nudge = new TimelineMax();
+	nudge.from(".cta2", .2, { opacity: 0 }, 0);
+	nudge.to(".t2", .2, { x: "+=10" }, 0);
+
+	tl.add((0, _commonJsCommonJs.frameEnd)(nudge), "+=1.5");
 }
 
 start();

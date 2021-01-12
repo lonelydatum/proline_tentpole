@@ -10,7 +10,7 @@ function frameEnd(){
 	tl.from(".bg2", .2, {opacity:0})
 
 	
-	tl.to(".phone", .3, {y:0, opacity:1}, "+=.3")	
+	tl.from(".phone", .3, {y:size.h, opacity:1}, "+=.3")	
 	tl.from(".ill", .3, {scale:0})
 
 	tl.from(".t2", .01, { opacity:0}, "+=.3")

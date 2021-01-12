@@ -66,8 +66,8 @@ function init(id) {
 			tl.set(".phone", { y: 200 });
 			break;
 
-		case "300x600":
-			tl.set(".ill", { transformOrigin: w / 2 + "px " + h / 2 + "px", x: 0, y: 0 });
+		case "970x90":
+			tl.set(".ill", { transformOrigin: w * .75 + "px " + h / 2 + "px", x: 0, y: 0 });
 			tl.set(".phone", { y: "+=100", opacity: 0 });
 			break;
 

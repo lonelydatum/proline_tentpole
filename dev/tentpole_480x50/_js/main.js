@@ -13,7 +13,7 @@ function start(){
 
 	tl.to(".player2", 1, {x:0, y:0}, 0)
 	player(1)
-	tl.from(".t1a", .15, {x:"-=600",opacity:1}, .2)
+	tl.from(".t1a", .15, {x:"-=600",opacity:0}, .2)
 	
 
 	

@@ -36,7 +36,7 @@
 
 
 #legalBtn{	
-	@include pos(6, 20);	
+	@include pos(6, 200);	
 }
 
 
@@ -46,6 +46,7 @@
 }
 
 #legalContent{
+	display: none;
 	font-size: 7px;
 	line-height: 9px;
 	padding: 2px;

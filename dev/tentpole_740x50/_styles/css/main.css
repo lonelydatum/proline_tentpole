@@ -270,9 +270,9 @@ sup {
 }
 
 #legalBtn {
-  -webkit-transform: translate(6px, 20px);
-  -ms-transform: translate(6px, 20px);
-  transform: translate(6px, 20px);
+  -webkit-transform: translate(6px, 200px);
+  -ms-transform: translate(6px, 200px);
+  transform: translate(6px, 200px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -286,6 +286,7 @@ sup {
 }
 
 #legalContent {
+  display: none;
   font-size: 8px;
   line-height: 10px;
   padding: 2px;
